@@ -13,4 +13,3 @@
 		mysqli_query($dblink,"update tblalat set status_alat='$xrs' where id_alat='$_POST[nama_alat]'");
 		
 		header("Location:../gangguan");
-?>

@@ -13,12 +13,14 @@
                         <td>
                             <select class='select2 col-12' id='nama_alat' name='nama_alat'>
                                 <option value=''></option>
-                                <?php $sql = mysqli_query($dblink,"SELECT * from tblalat where status_alat='Normal'");
-										while ($r=mysqli_fetch_array($sql,MYSQLI_ASSOC)){
-											$xidk = isset($r['id_alat']) ? $r['id_alat'] : '';
-											$xnm = isset($r['nama_peralatan']) ? $r['nama_peralatan'] : '';
-											echo "<option value='$xidk'>$xidk | $xnm</option> ";
-										} ?>
+                                <?php
+                                $sql = mysqli_query($dblink, "SELECT * from tblalat where status_alat='Normal'");
+                                while ($r = mysqli_fetch_array($sql, MYSQLI_ASSOC)) {
+                                    $xidk = isset($r['id_alat']) ? $r['id_alat'] : '';
+                                    $xnm = isset($r['nama_peralatan']) ? $r['nama_peralatan'] : '';
+                                    echo "<option value='$xidk'>$xidk | $xnm</option> ";
+                                }
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -26,7 +28,8 @@
                         <td>Ciri Kerusakan</td>
                         <td>:</td>
                         <td>
-                            <textarea class='form-control' name='ciri_kerusakan' rows='5'></textarea></td>
+                            <textarea class='form-control' name='ciri_kerusakan' rows='5'></textarea>
+                        </td>
                     </tr>
                     <tr>
                         <td>Deskripsi Kerusakan</td>
@@ -39,8 +42,7 @@
                         <td colspan='3'>
                             <div class='text-center'>
                                 <input class='btn btn-success btn-sm' type='submit' name='clapor' value='Lapor' />
-                                <input class='btn btn-warning btn-sm' type='reset' name='creset' value='Batal'
-                                    onClick=history.go(-1); />
+                                <input class='btn btn-warning btn-sm' type='reset' name='creset' value='Batal' onClick=history.go(-1); />
                             </div>
                         </td>
                     </tr>

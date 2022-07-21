@@ -20,4 +20,3 @@
 	}else{
 		echo"<center>Tidak Ada Modul</center>";
 	}
-?>

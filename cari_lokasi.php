@@ -5,6 +5,4 @@ $query = $dblink->query("SELECT * FROM tbllokasi WHERE nama_lokasi LIKE '%".$sea
 while ($row = $query->fetch_assoc()) {
     $data[] = $row['nama_lokasi'];
 }
-
 echo json_encode($data);
-?>

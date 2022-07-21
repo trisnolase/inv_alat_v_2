@@ -1,5 +1,4 @@
 <?php
-// error_reporting(0);
 include "db_link.php";
 $_GET['apage'] = empty($_GET['apage']) ? null : $_GET['apage'];
 $hal = $_GET['apage'];
@@ -111,9 +110,9 @@ $hal = $_GET['apage'];
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
+            <form class="navbar-form" method="POST" action="caridata">
               <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
+                <input type="text" name="cari" class="form-control" placeholder="Search...">
                 <button type="submit" class="btn btn-default btn-round btn-just-icon">
                   <i class="material-icons">search</i>
                   <div class="ripple-container"></div>
@@ -172,14 +171,7 @@ $hal = $_GET['apage'];
       <div class="content">
         <div class="container-fluid text-white">
           <?php
-          // $cek = empty($_REQUEST['xlink']) ? include "view_data/home.php" : $_REQUEST['xlink'];
           empty($_REQUEST['xlink']) ? include "view_data/home.php" : include $_REQUEST['xlink'];
-          // $slink = $cek;
-          // if (isset($cek)) {
-          //   include "$cek";
-          // } else {
-          //   include "view_data/home.php";
-          // }
           ?>
         </div>
       </div>
