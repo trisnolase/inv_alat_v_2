@@ -299,6 +299,27 @@ WHERE
 	tblalat.id_lokasi = tbllokasi.id_lokasi ;
 
 -- ----------------------------
+-- View structure for lokasi_alat_view
+-- ----------------------------
+DROP VIEW IF EXISTS `lokasi_alat_view`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `lokasi_alat_view` AS SELECT
+	tblhistorilokasi.id_histori, 
+	tblhistorilokasi.id_alat, 
+	tblalat.nama_peralatan, 
+	tblhistorilokasi.id_lokasi_a, 
+	tblhistorilokasi.id_lokasi_b, 
+	tblhistorilokasi.tgl
+FROM
+	tblhistorilokasi
+	INNER JOIN
+	tblalat
+	ON 
+		tblhistorilokasi.id_alat = tblalat.id_alat
+ORDER BY
+	tblhistorilokasi.id_alat DESC, 
+	tblhistorilokasi.id_histori DESC ;
+
+-- ----------------------------
 -- View structure for histori_lokasi_view
 -- ----------------------------
 DROP VIEW IF EXISTS `histori_lokasi_view`;
@@ -344,27 +365,6 @@ FROM
 	tblbkat
 	ON 
 		tblkategori.id_kategori = tblbkat.id_kat ;
-
--- ----------------------------
--- View structure for lokasi_alat_view
--- ----------------------------
-DROP VIEW IF EXISTS `lokasi_alat_view`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `lokasi_alat_view` AS SELECT
-	tblhistorilokasi.id_histori, 
-	tblhistorilokasi.id_alat, 
-	tblalat.nama_peralatan, 
-	tblhistorilokasi.id_lokasi_a, 
-	tblhistorilokasi.id_lokasi_b, 
-	tblhistorilokasi.tgl
-FROM
-	tblhistorilokasi
-	INNER JOIN
-	tblalat
-	ON 
-		tblhistorilokasi.id_alat = tblalat.id_alat
-ORDER BY
-	tblhistorilokasi.id_alat DESC, 
-	tblhistorilokasi.id_histori DESC ;
 
 -- ----------------------------
 -- View structure for lokasi_view
