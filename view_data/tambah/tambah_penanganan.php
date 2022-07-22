@@ -62,7 +62,9 @@ while ($r = mysqli_fetch_array($sql, MYSQLI_ASSOC)) {
 						<td><input class='form-control' type='teks' name='xrekom'></td>
 					</tr>
 					<tr>
-						<td colspan='3'>
+						<td></td>
+						<td></td>
+						<td>
 							<input class='btn btn-success' type='submit' name='ckirim' value='Simpan'>
 							<input class='btn btn-warning' type='reset' name='creset' value='Batal' onClick=history.go(-1);>
 						</td>

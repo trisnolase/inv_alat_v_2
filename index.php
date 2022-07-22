@@ -123,32 +123,25 @@ $hal = $_GET['apage'];
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <?php
-                  $sql = mysqli_query($dblink, "SELECT COUNT(tblalat.status_alat) as jumlah
-                            FROM
-                                tblalat, tblkategori, tbllokasi
-                            WHERE
-                                tblalat.id_kategori = tblkategori.id_kategori AND tblalat.id_lokasi = tbllokasi.id_lokasi AND tblalat.status_alat = 'Rusak Sementara'");
-
+                  $sql = mysqli_query($dblink, "SELECT * from notif_view");
                   while ($r = mysqli_fetch_array($sql, MYSQLI_ASSOC)) {
                     $xjumlah = isset($r['jumlah']) ? $r['jumlah'] : '';
                   }
-                  $notif = $xjumlah;
-                  if ($notif == '0') {
+                  if ($xjumlah == 0) {
                     echo "<i class='material-icons'>notifications</i>";
                   } else {
                     echo "<i class='material-icons text-warning'>notifications</i>
                                   <span class='notification'>
-                                    $xjumlah
+                                    1
                                   </span>";
                   }
                   ?>
                   <p class="d-lg-none d-md-block"><br>
                   </p>
                 </a>
-
                 <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
                   <?php
-                  if ($notif == '0') {
+                  if ($xjumlah == '0') {
                     echo "<a class='dropdown-item' href=''> Tidak Ada Laporan Gangguan Terbaru</a>";
                   } else {
                     echo "<a class='dropdown-item' href='gangguan'> $xjumlah Peralatan Rusak Belum Diproses</a>";
