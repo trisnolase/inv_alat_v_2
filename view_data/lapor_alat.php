@@ -12,7 +12,7 @@
                         <td>:</td>
                         <td>
                             <select class='select2 col-12' id='nama_alat' name='nama_alat'>
-                                <option value=''></option>
+                                <option value=""></option>
                                 <?php
                                 $sql = mysqli_query($dblink, "SELECT * from tblalat where status_alat='Normal'");
                                 while ($r = mysqli_fetch_array($sql, MYSQLI_ASSOC)) {
@@ -39,10 +39,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='3'>
-                            <div class='text-center'>
-                                <input class='btn btn-success btn-sm' type='submit' name='clapor' value='Lapor' />
-                                <input class='btn btn-warning btn-sm' type='reset' name='creset' value='Batal' onClick=history.go(-1); />
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div>
+                                <input class='btn btn-success' type='submit' name='clapor' value='Lapor' />
                             </div>
                         </td>
                     </tr>

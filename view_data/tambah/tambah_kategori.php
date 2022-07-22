@@ -35,8 +35,8 @@
 						<td></td>
 						<td></td>
 						<td>
-							<input class='btn btn-success btn-sm' type='submit' name='ckirim' value='Simpan' />
-							<input class='btn btn-warning btn-sm' type='reset' name='creset' value='Batal' onClick=history.go(-1); />
+							<input class='btn btn-success' type='submit' name='ckirim' value='Simpan' />
+							<input class='btn btn-warning' type='reset' name='creset' value='Batal' onClick=history.go(-1); />
 						</td>
 					</tr>
 				</table>
