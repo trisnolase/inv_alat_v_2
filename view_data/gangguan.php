@@ -41,15 +41,15 @@ $sql = mysqli_query($dblink, "SELECT * from tblgangguan as a,tblalat as b where 
 								<td><?php echo $xidk ?></td>
 								<td><?php echo $xida ?></td>
 								<td><?php echo $xnma ?></td>
-								<td><?php echo $xtgl ?></td>
+								<td class="text-center"><?php echo date_format(new DateTime($xtgl), 'd M Y'); ?></td>
 								<td><?php echo $xciri ?></td>
 								<td><?php echo $xdg ?></td>
 								<td><?php echo $xstatus ?></td>
-								<td>
+								<td class="text-center">
 									<?php if ($xsts <> 'S') {
 										echo "<a href='statusalat-$xidk' class='btn btn-danger btn-sm'>Ubah Status</a>";
 									} else {
-										echo "-";
+										echo "<i class='material-icons text-success'>check</i>";
 									} ?>
 								</td>
 							</tr>
