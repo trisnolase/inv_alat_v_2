@@ -8,7 +8,7 @@
             <div class="table-responsive">
                 <table class="table table-hover">
                     <tr>
-                        <td>Nama Alat</td>
+                        <td class="col-2">Nama Alat</td>
                         <td>:</td>
                         <td>
                             <select class='select2 col-12' id='nama_alat' name='nama_alat'>
