@@ -9,24 +9,21 @@ $hal = $_GET['apage'];
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
   <title>
     Sistem Informasi Inventaris Peralatan Jaringan
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/g-font.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
   <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
 
   <!-- Select 2 Style -->
   <link rel="stylesheet" href="view_data/style/css/select2.min.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
 
 </head>
 
@@ -179,7 +176,7 @@ $hal = $_GET['apage'];
   <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
-        <i class="fa fa-cog fa-2x"> </i>
+        <i class="material-icons fa-2x m-2">settings</i>
       </a>
       <ul class="dropdown-menu">
         <li class="adjustments-line">
@@ -221,10 +218,10 @@ $hal = $_GET['apage'];
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap-material-design.min.js"></script>
-  <script src="https://unpkg.com/default-passive-events"></script>
+  <script src="assets/js/index.umd.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Place this tag in your head or just before your close body tag. -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="assets/js/buttons.js"></script>
   <!-- Chartist JS -->
   <script src="assets/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -402,7 +399,6 @@ $hal = $_GET['apage'];
   </script>
 
   <script type="text/javascript" src="view_data/style/js/select2.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
 
   <script>
     $(document).ready(function() {
@@ -425,8 +421,7 @@ $hal = $_GET['apage'];
       });
     });
   </script>
-  <!-- <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> -->
+
   <script>
     $(function() {
       $("#daftar_lokasi").autocomplete({
