@@ -40,12 +40,6 @@ $hal = $_GET['apage'];
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li <?php if ($hal == 'homepage') echo "class='nav-item active'"; ?>>
-            <a class="nav-link" href="homepage">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
           <li <?php if ($hal == 'alat') echo "class='nav-item active'"; ?>>
             <a class="nav-link" href="alat-1">
               <i class="material-icons">library_books</i>

@@ -2,42 +2,42 @@
  
 RewriteEngine on
 
-RewriteRule ^homepage index.php?apage=homepage [L]
+RewriteRule ^login index.php [L]
 
 #alat
-RewriteRule ^alat-(.*)$ index.php?xlink=view_data/data_alat.php&apage=alat&act=$1 [L]
-RewriteRule ^tambahalat index.php?xlink=view_data/tambah/tambah_alat_cek.php&apage=alat [L]
-RewriteRule ^tambahperalatan index.php?xlink=view_data/tambah/tambah_alat_kt.php&apage=alat [L]
-RewriteRule ^editalat-(.*)$ index.php?xlink=view_data/edit/edit_alat.php&apage=alat&id=$1 [L]
+RewriteRule ^alat-(.*)$ dashboard.php?xlink=view_data/data_alat.php&apage=alat&act=$1 [L]
+RewriteRule ^tambahalat dashboard.php?xlink=view_data/tambah/tambah_alat_cek.php&apage=alat [L]
+RewriteRule ^tambahperalatan dashboard.php?xlink=view_data/tambah/tambah_alat_kt.php&apage=alat [L]
+RewriteRule ^editalat-(.*)$ dashboard.php?xlink=view_data/edit/edit_alat.php&apage=alat&id=$1 [L]
 RewriteRule ^hapusalat-(.*)$ control_data/proses_db_alat.php?modul=alat&act=hapus&xxid=$1 [L]
-RewriteRule ^detail-(.*)$ index.php?xlink=view_data/detail_alat.php&apage=alat&id=$1 [L]
+RewriteRule ^detail-(.*)$ dashboard.php?xlink=view_data/detail_alat.php&apage=alat&id=$1 [L]
 
 #kategori
-RewriteRule ^kategori index.php?xlink=view_data/kategori.php&apage=kategori [L]
-RewriteRule ^tambahkategori index.php?xlink=view_data/tambah/tambah_kategori.php&apage=kategori [L]
-RewriteRule ^editkat-(.*)$ index.php?xlink=view_data/edit/edit_kategori.php&apage=kategori&mod=edit&id=$1 [L]
+RewriteRule ^kategori dashboard.php?xlink=view_data/kategori.php&apage=kategori [L]
+RewriteRule ^tambahkategori dashboard.php?xlink=view_data/tambah/tambah_kategori.php&apage=kategori [L]
+RewriteRule ^editkat-(.*)$ dashboard.php?xlink=view_data/edit/edit_kategori.php&apage=kategori&mod=edit&id=$1 [L]
 RewriteRule ^hapuskat-(.*)$ control_data/proses_db_kategori.php?modul=kategori&act=hapus&xxid=$1 [L]
 
 #lokasi
-RewriteRule ^lokasi index.php?xlink=view_data/lokasi.php&apage=lokasi [L]
-RewriteRule ^tambahlokasi index.php?xlink=view_data/tambah/tambah_lokasi.php&apage=lokasi [L]
-RewriteRule ^editlok-(.*)$ index.php?xlink=view_data/edit/edit_lokasi.php&apage=lokasi&mod=edit&id=$1 [L]
+RewriteRule ^lokasi dashboard.php?xlink=view_data/lokasi.php&apage=lokasi [L]
+RewriteRule ^tambahlokasi dashboard.php?xlink=view_data/tambah/tambah_lokasi.php&apage=lokasi [L]
+RewriteRule ^editlok-(.*)$ dashboard.php?xlink=view_data/edit/edit_lokasi.php&apage=lokasi&mod=edit&id=$1 [L]
 RewriteRule ^hapuslok-(.*)$ control_data/proses_db_lokasi.php?modul=lokasi&act=hapus&xxid=$1 [L]
 
 #gangguan
-RewriteRule ^lapor index.php?xlink=view_data/lapor_alat.php&apage=lapor [L]
-RewriteRule ^gangguan index.php?xlink=view_data/gangguan.php&apage=gangguan [L]
-RewriteRule ^statusalat-(.*)$ index.php?xlink=view_data/tambah/tambah_penanganan.php&apage=gangguan&id=$1 [L]
+RewriteRule ^lapor dashboard.php?xlink=view_data/lapor_alat.php&apage=lapor [L]
+RewriteRule ^gangguan dashboard.php?xlink=view_data/gangguan.php&apage=gangguan [L]
+RewriteRule ^statusalat-(.*)$ dashboard.php?xlink=view_data/tambah/tambah_penanganan.php&apage=gangguan&id=$1 [L]
 
 #penanganan
-RewriteRule ^penanganan index.php?xlink=view_data/penanganan.php&apage=penanganan [L]
-RewriteRule ^mutasi index.php?xlink=view_data/mutasi_alat.php&apage=mutasi [L]
+RewriteRule ^penanganan dashboard.php?xlink=view_data/penanganan.php&apage=penanganan [L]
+RewriteRule ^mutasi dashboard.php?xlink=view_data/mutasi_alat.php&apage=mutasi [L]
 
 #mutasi
-RewriteRule ^tambahmutasi index.php?xlink=view_data/tambah/tambah_mutasi.php&apage=mutasi [L]
+RewriteRule ^tambahmutasi dashboard.php?xlink=view_data/tambah/tambah_mutasi.php&apage=mutasi [L]
 
 #cari
-RewriteRule ^caridata index.php?xlink=view_data/pencarian.php [L]
+RewriteRule ^caridata dashboard.php?xlink=view_data/pencarian.php [L]
 
 #print
 RewriteRule ^printdata-(.*)$ view_data/detail_alat_print.php?idp=$1 [L]
