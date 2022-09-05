@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 100422
  Source Host           : localhost:3306
- Source Schema         : dbinventarisperalatan
+ Source Schema         : dbinvalatv2
 
  Target Server Type    : MySQL
  Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 21/07/2022 14:45:03
+ Date: 05/09/2022 16:06:06
 */
 
 SET NAMES utf8mb4;
@@ -39,7 +39,7 @@ CREATE TABLE `tblalat`  (
   `status_alat` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `p_img` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_alat`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tblalat
@@ -47,7 +47,7 @@ CREATE TABLE `tblalat`  (
 INSERT INTO `tblalat` VALUES ('ALT001', 'KTA001', 'LOK004', 'PC-Diskominfo 001', '2021-12-01', 'Asus PC Core I7 - Office 2012 - Original', '-', '-', '-', '-', '-', '8 GB', '1200 GB', 'Core I7', 'Rusak Sementara', 'Spn35pc_cek.png');
 INSERT INTO `tblalat` VALUES ('ALT003', 'KTA001', 'LOK004', 'PC-Diskominfo 003', '2021-12-20', 'PC', '-', '-', '-', '-', '-', '6 GB', '900 GB', 'I7', 'Rusak Permanen', 'o8pwOpc_cek.png');
 INSERT INTO `tblalat` VALUES ('ALT004', 'KTA001', 'LOK001', 'PC-Diskominfo 004', '2021-01-01', 'PC Windows 7', '-', '-', '-', '-', '-', '4 GB', '700 GB', 'I7', 'Normal', 'QY6rbpc_ok.jpg');
-INSERT INTO `tblalat` VALUES ('ALT009', 'KTA001', 'LOK001', 'PC-Diskominfo 87', '2021-01-01', 'PC Asus + Windows 10 Pro', '-', '-', '-', '-', '-', '6 GB', '500 GB', 'I5', 'Normal', 'khcSLpc_cek.png');
+INSERT INTO `tblalat` VALUES ('ALT009', 'KTA001', 'LOK001', 'PC-Diskominfo 87', '2021-01-01', 'PC Asus + Windows 10 Pro', '-', '-', '-', '-', '-', '6 GB', '500 GB', 'I5', 'Rusak Sementara', 'khcSLpc_cek.png');
 INSERT INTO `tblalat` VALUES ('ALT033', 'KTA004', 'LOK002', 'Printer Epson', '2022-07-20', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'Rusak Permanen', 'k9Bz3');
 INSERT INTO `tblalat` VALUES ('ALT036', 'KTA004', 'LOK004', 'PR-Dispen Kota Gusit 001', '2021-11-23', 'Canon Printer - P', '-', '-', '-', '-', '-', '-', '-', '-', 'Rusak Permanen', 'fTi5Wc_printer.jpg');
 INSERT INTO `tblalat` VALUES ('ALT074', 'KTA004', 'LOK003', 'PR-Dinas Perikanan 001', '2021-12-21', 'Printer - Scanner', '-', '-', '-', '-', '-', '-', '-', '-', 'Normal', 's5TXeprinter.jpg');
@@ -71,7 +71,7 @@ CREATE TABLE `tblbkat`  (
   `g` char(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `h` char(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tblbkat
@@ -96,7 +96,7 @@ CREATE TABLE `tblgangguan`  (
   `deskripsi_gangguan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_gangguan`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tblgangguan
@@ -118,6 +118,9 @@ INSERT INTO `tblgangguan` VALUES (25, 'ALT033', '2022-02-12', 'Printer Error', '
 INSERT INTO `tblgangguan` VALUES (26, 'ALT074', '2022-02-15', '-', '-', 'S');
 INSERT INTO `tblgangguan` VALUES (27, 'ALT001', '2022-02-15', 'Windows error', 'Windows error', 'S');
 INSERT INTO `tblgangguan` VALUES (28, 'ALT001', '2022-07-20', '-', '-', 'B');
+INSERT INTO `tblgangguan` VALUES (29, 'ALT004', '2022-07-21', '-', '-', 'S');
+INSERT INTO `tblgangguan` VALUES (33, 'ALT009', '2022-07-22', '-', '-', 'B');
+INSERT INTO `tblgangguan` VALUES (34, 'ALT074', '2022-07-26', '', '', 'S');
 
 -- ----------------------------
 -- Table structure for tblhistorilokasi
@@ -130,7 +133,7 @@ CREATE TABLE `tblhistorilokasi`  (
   `id_lokasi_b` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tgl` date NOT NULL,
   PRIMARY KEY (`id_histori`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tblhistorilokasi
@@ -167,7 +170,7 @@ CREATE TABLE `tblkategori`  (
   `id_kategori` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nama_kategori` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_kategori`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tblkategori
@@ -181,6 +184,23 @@ INSERT INTO `tblkategori` VALUES ('KTA004', 'Printer');
 INSERT INTO `tblkategori` VALUES ('KTA006', 'HUB');
 
 -- ----------------------------
+-- Table structure for tbllogin
+-- ----------------------------
+DROP TABLE IF EXISTS `tbllogin`;
+CREATE TABLE `tbllogin`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `role` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tbllogin
+-- ----------------------------
+INSERT INTO `tbllogin` VALUES (1, 'admin', 'admin', 'admin');
+
+-- ----------------------------
 -- Table structure for tbllokasi
 -- ----------------------------
 DROP TABLE IF EXISTS `tbllokasi`;
@@ -188,12 +208,12 @@ CREATE TABLE `tbllokasi`  (
   `id_lokasi` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nama_lokasi` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_lokasi`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbllokasi
 -- ----------------------------
-INSERT INTO `tbllokasi` VALUES ('LOK001', 'Diskominfo Kota Gunungsitoli');
+INSERT INTO `tbllokasi` VALUES ('LOK001', 'Dinas Kominfo Kota Gunungsitoli');
 INSERT INTO `tbllokasi` VALUES ('LOK002', 'Dinas Pendidikan Kota Gunungsitoli');
 INSERT INTO `tbllokasi` VALUES ('LOK003', 'Dishub Kota Gunungsitoli');
 INSERT INTO `tbllokasi` VALUES ('LOK004', 'Dinas Sosial Kota Gunungsitoli');
@@ -213,7 +233,7 @@ CREATE TABLE `tblpenanganan`  (
   `hasil` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `rekomendasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_penanganan`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tblpenanganan
@@ -235,6 +255,8 @@ INSERT INTO `tblpenanganan` VALUES (26, '24', '2022-02-12', 'Budi', 'Diganti', '
 INSERT INTO `tblpenanganan` VALUES (27, '27', '2022-02-15', 'Moha', 'Ok', 'Normal', 'Ok');
 INSERT INTO `tblpenanganan` VALUES (28, '26', '2022-02-22', 'Ryan', 'Ok', 'Normal', 'Ok');
 INSERT INTO `tblpenanganan` VALUES (29, '25', '2022-07-20', '-', '-', 'Rusak Permanen', '-');
+INSERT INTO `tblpenanganan` VALUES (30, '29', '2022-07-21', '-', '-', 'Normal', '-');
+INSERT INTO `tblpenanganan` VALUES (31, '34', '2022-07-26', '-', '-', 'Normal', '-');
 
 -- ----------------------------
 -- View structure for alat_view
@@ -299,27 +321,6 @@ WHERE
 	tblalat.id_lokasi = tbllokasi.id_lokasi ;
 
 -- ----------------------------
--- View structure for lokasi_alat_view
--- ----------------------------
-DROP VIEW IF EXISTS `lokasi_alat_view`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `lokasi_alat_view` AS SELECT
-	tblhistorilokasi.id_histori, 
-	tblhistorilokasi.id_alat, 
-	tblalat.nama_peralatan, 
-	tblhistorilokasi.id_lokasi_a, 
-	tblhistorilokasi.id_lokasi_b, 
-	tblhistorilokasi.tgl
-FROM
-	tblhistorilokasi
-	INNER JOIN
-	tblalat
-	ON 
-		tblhistorilokasi.id_alat = tblalat.id_alat
-ORDER BY
-	tblhistorilokasi.id_alat DESC, 
-	tblhistorilokasi.id_histori DESC ;
-
--- ----------------------------
 -- View structure for histori_lokasi_view
 -- ----------------------------
 DROP VIEW IF EXISTS `histori_lokasi_view`;
@@ -367,6 +368,27 @@ FROM
 		tblkategori.id_kategori = tblbkat.id_kat ;
 
 -- ----------------------------
+-- View structure for lokasi_alat_view
+-- ----------------------------
+DROP VIEW IF EXISTS `lokasi_alat_view`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `lokasi_alat_view` AS SELECT
+	tblhistorilokasi.id_histori, 
+	tblhistorilokasi.id_alat, 
+	tblalat.nama_peralatan, 
+	tblhistorilokasi.id_lokasi_a, 
+	tblhistorilokasi.id_lokasi_b, 
+	tblhistorilokasi.tgl
+FROM
+	tblhistorilokasi
+	INNER JOIN
+	tblalat
+	ON 
+		tblhistorilokasi.id_alat = tblalat.id_alat
+ORDER BY
+	tblhistorilokasi.id_alat DESC, 
+	tblhistorilokasi.id_histori DESC ;
+
+-- ----------------------------
 -- View structure for lokasi_view
 -- ----------------------------
 DROP VIEW IF EXISTS `lokasi_view`;
@@ -382,6 +404,21 @@ FROM
 		tbllokasi.id_lokasi = tblalat.id_lokasi
 GROUP BY
 	tbllokasi.id_lokasi ;
+
+-- ----------------------------
+-- View structure for notif_view
+-- ----------------------------
+DROP VIEW IF EXISTS `notif_view`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `notif_view` AS SELECT
+	COUNT( tblalat.status_alat ) AS jumlah 
+FROM
+	tblalat,
+	tblkategori,
+	tbllokasi 
+WHERE
+	tblalat.id_kategori = tblkategori.id_kategori 
+	AND tblalat.id_lokasi = tbllokasi.id_lokasi 
+	AND tblalat.status_alat = 'Rusak Sementara' ;
 
 -- ----------------------------
 -- View structure for penanganan_view

@@ -42,6 +42,9 @@ RewriteRule ^caridata dashboard.php?xlink=view_data/pencarian.php [L]
 #print
 RewriteRule ^printdata-(.*)$ view_data/detail_alat_print.php?idp=$1 [L]
 
+#login
+RewriteRule ^ceklogin control_data/proses_db_login.php?modul=login&act=cek [L]
+
 Options All -Indexes
 
 ErrorDocument 400 http://localhost/inv_alat_v_2

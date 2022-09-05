@@ -139,13 +139,15 @@ $hal = $_GET['apage'];
                   }
                   ?></div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class='material-icons'>person</i>
+                  <p class="d-lg-none d-md-block"><br>
                   </p>
                 </a>
+                <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
+                  <a class='dropdown-item' href="login">Log Out</a>
+                </div>
               </li>
             </ul>
           </div>
