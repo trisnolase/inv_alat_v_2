@@ -11,7 +11,7 @@
  Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 05/09/2022 16:06:06
+ Date: 05/09/2022 16:15:05
 */
 
 SET NAMES utf8mb4;
@@ -239,24 +239,24 @@ CREATE TABLE `tblpenanganan`  (
 -- Records of tblpenanganan
 -- ----------------------------
 INSERT INTO `tblpenanganan` VALUES (1, '1', '2021-12-21', 'Yanto', 'Instal ulang driver VGA', 'Normal', 'Jangan menambahkan aplikasi yang mengubah setelan VGA');
-INSERT INTO `tblpenanganan` VALUES (2, '3', '2021-12-21', 'Eri', 'Ganti layar', 'Normal', 'Jangan menaruh beban pada layar');
+INSERT INTO `tblpenanganan` VALUES (2, '3', '2021-12-21', 'Eri', 'Ganti layar', 'Normal', 'Jangan menekan layar terlalu keras');
 INSERT INTO `tblpenanganan` VALUES (3, '4', '2021-12-21', 'Rian', 'Instal ulang OS Windows', 'Normal', 'Sistem berjalan dengan baik jika menggunakan Windows 10');
 INSERT INTO `tblpenanganan` VALUES (4, '5', '2021-12-21', 'Hengki', '-', 'Normal', '-');
 INSERT INTO `tblpenanganan` VALUES (5, '2', '2021-12-21', 'Hengki', '-', 'Rusak Pemanen', 'Diganti dengan yang baru');
-INSERT INTO `tblpenanganan` VALUES (6, '6', '2021-12-29', '-', '-', 'Normal', 'Ok');
+INSERT INTO `tblpenanganan` VALUES (6, '6', '2021-12-29', 'Zalukhu', '-', 'Normal', 'Ok');
 INSERT INTO `tblpenanganan` VALUES (7, '7', '2021-12-30', 'Ray', '-', 'Normal', '-');
 INSERT INTO `tblpenanganan` VALUES (8, '8', '2022-01-04', 'Ryan', '-', 'Normal', '-');
 INSERT INTO `tblpenanganan` VALUES (9, '9', '2022-02-06', 'Andre', 'Instal ulang office', 'Normal', '-');
 INSERT INTO `tblpenanganan` VALUES (12, '10', '2022-02-09', 'Zalukhu', 'Ok', 'Rusak Permanen', 'Zalukhu');
-INSERT INTO `tblpenanganan` VALUES (21, '15', '2022-02-09', 'Ok', 'Ok', 'Normal', 'Ok');
-INSERT INTO `tblpenanganan` VALUES (24, '14', '2022-02-09', 'Ok', 'Ok', 'Normal', 'Ok');
+INSERT INTO `tblpenanganan` VALUES (21, '15', '2022-02-09', 'Zalukhu', 'Ok', 'Normal', 'Ok');
+INSERT INTO `tblpenanganan` VALUES (24, '14', '2022-02-09', 'Zalukhu', 'Ok', 'Normal', 'Ok');
 INSERT INTO `tblpenanganan` VALUES (25, '22', '2022-02-12', 'Budi', 'Ok', 'Normal', 'Ok');
 INSERT INTO `tblpenanganan` VALUES (26, '24', '2022-02-12', 'Budi', 'Diganti', 'Rusak Permanen', 'Beli pc baru');
 INSERT INTO `tblpenanganan` VALUES (27, '27', '2022-02-15', 'Moha', 'Ok', 'Normal', 'Ok');
 INSERT INTO `tblpenanganan` VALUES (28, '26', '2022-02-22', 'Ryan', 'Ok', 'Normal', 'Ok');
-INSERT INTO `tblpenanganan` VALUES (29, '25', '2022-07-20', '-', '-', 'Rusak Permanen', '-');
-INSERT INTO `tblpenanganan` VALUES (30, '29', '2022-07-21', '-', '-', 'Normal', '-');
-INSERT INTO `tblpenanganan` VALUES (31, '34', '2022-07-26', '-', '-', 'Normal', '-');
+INSERT INTO `tblpenanganan` VALUES (29, '25', '2022-07-20', 'Zalukhu', '-', 'Rusak Permanen', '-');
+INSERT INTO `tblpenanganan` VALUES (30, '29', '2022-07-21', 'Zalukhu', '-', 'Normal', '-');
+INSERT INTO `tblpenanganan` VALUES (31, '34', '2022-07-26', 'Zalukhu', '-', 'Normal', '-');
 
 -- ----------------------------
 -- View structure for alat_view

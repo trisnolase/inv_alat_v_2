@@ -123,7 +123,7 @@ $hal = $_GET['apage'];
                   } else {
                     echo "<i class='material-icons text-warning'>notifications</i>
                                   <span class='notification'>
-                                    1
+                                  $xjumlah
                                   </span>";
                   }
                   ?>
@@ -133,9 +133,9 @@ $hal = $_GET['apage'];
                 <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
                   <?php
                   if ($xjumlah == '0') {
-                    echo "<a class='dropdown-item' href=''> Tidak Ada Laporan Gangguan Terbaru</a>";
+                    echo "<a class='dropdown-item' href=''>Tidak Ada Laporan Gangguan Terbaru</a>";
                   } else {
-                    echo "<a class='dropdown-item' href='gangguan'> $xjumlah Peralatan Rusak Belum Diproses</a>";
+                    echo "<a class='dropdown-item' href='gangguan'><b> $xjumlah </b>&nbsp; Peralatan Rusak Belum Diproses</a>";
                   }
                   ?></div>
               </li>
