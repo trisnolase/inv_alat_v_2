@@ -1,4 +1,5 @@
 <?php
+session_start();
 $sesi = isset($_SESSION['role']) ? $_SESSION['role'] : '';
 if ($sesi == "admin") {
 ?>
