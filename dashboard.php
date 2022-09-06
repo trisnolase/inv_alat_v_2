@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "db_link.php";
 $_GET['apage'] = empty($_GET['apage']) ? null : $_GET['apage'];
 $hal = $_GET['apage'];
@@ -146,7 +147,7 @@ $hal = $_GET['apage'];
                   </p>
                 </a>
                 <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
-                  <a class='dropdown-item' href="login">Log Out</a>
+                  <a class='dropdown-item' href="logout">Log Out</a>
                 </div>
               </li>
             </ul>
