@@ -6,7 +6,7 @@ if ($sesi == "admin") {
 		<div class='card'>
 			<div class='card-body'>
 				<a href='tambahalat' class='btn btn-success btn-sm'>Tambah Data Peralatan</a>
-				<span class="pull-right">
+				<span class="float-right">
 					<a href='alat-1' class='btn btn-primary btn-sm'>Normal</a>
 					<a href='alat-2' class='btn btn-warning btn-sm'>Rusak Sementara</a>
 					<a href='alat-3' class='btn btn-danger btn-sm'>Rusak Permanen</a>
