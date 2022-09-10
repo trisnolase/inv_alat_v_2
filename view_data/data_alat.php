@@ -61,6 +61,7 @@ if ($sesi == "admin") {
 								$xprocessor = isset($r['t_processor']) ? $r['t_processor'] : '';
 								$xstatus = isset($r['status_alat']) ? $r['status_alat'] : '';
 								$xhimg = isset($r['p_img']) ? $r['p_img'] : '';
+								$xhapus = isset($r['cek_alat']) ? $r['cek_alat'] : '';
 								$xnone = 'none';
 							?>
 								<tr>
@@ -70,20 +71,23 @@ if ($sesi == "admin") {
 									<td><?php echo $xkategori ?></td>
 									<td class="text-center"><?php echo date_format(new DateTime($xtahun), 'd M Y'); ?></td>
 									<td><?php echo $xstatus ?></td>
-									<td class='td-actions text-center' style="width:96px;">
-										<?php if ($xhimg == '') { ?>
-											<a href='hapusalat-<?php echo $xid ?>&g=<?php echo $xnone ?>' class='btn btn-danger btn-sm'>
-												<button type='button' rel='tooltip' title='Remove' class='btn btn-white btn-link btn-sm'>
-													<i class='material-icons'>close</i>
-												</button>
-											</a>
-										<?php } else { ?>
-											<a href='hapusalat-<?php echo $xid ?>&g=<?php echo $xhimg ?>' class='btn btn-danger btn-sm'>
-												<button type='button' rel='tooltip' title='Remove' class='btn btn-white btn-link btn-sm'>
-													<i class='material-icons'>close</i>
-												</button>
-											</a>
-										<?php } ?>
+									<td class='td-actions text-right' style="width:96px;">
+										<?php
+										if ($xhapus == '') {
+											if ($xhimg == '') { ?>
+												<a href='hapusalat-<?php echo $xid ?>&g=<?php echo $xnone ?>' class='btn btn-danger btn-sm'>
+													<button type='button' rel='tooltip' title='Remove' class='btn btn-white btn-link btn-sm'>
+														<i class='material-icons'>close</i>
+													</button>
+												</a>
+											<?php } else { ?>
+												<a href='hapusalat-<?php echo $xid ?>&g=<?php echo $xhimg ?>' class='btn btn-danger btn-sm'>
+													<button type='button' rel='tooltip' title='Remove' class='btn btn-white btn-link btn-sm'>
+														<i class='material-icons'>close</i>
+													</button>
+												</a>
+										<?php }
+										} ?>
 										<a href='editalat-<?php echo $xid ?>' class='btn btn-primary btn-sm'>
 											<button type='button' rel='tooltip' title='Edit' class='btn btn-white btn-link btn-sm'>
 												<i class='material-icons'>edit</i>
