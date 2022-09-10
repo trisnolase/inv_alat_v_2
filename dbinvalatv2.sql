@@ -11,7 +11,7 @@
  Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 05/09/2022 16:15:05
+ Date: 10/09/2022 21:14:02
 */
 
 SET NAMES utf8mb4;
@@ -46,12 +46,14 @@ CREATE TABLE `tblalat`  (
 -- ----------------------------
 INSERT INTO `tblalat` VALUES ('ALT001', 'KTA001', 'LOK004', 'PC-Diskominfo 001', '2021-12-01', 'Asus PC Core I7 - Office 2012 - Original', '-', '-', '-', '-', '-', '8 GB', '1200 GB', 'Core I7', 'Rusak Sementara', 'Spn35pc_cek.png');
 INSERT INTO `tblalat` VALUES ('ALT003', 'KTA001', 'LOK004', 'PC-Diskominfo 003', '2021-12-20', 'PC', '-', '-', '-', '-', '-', '6 GB', '900 GB', 'I7', 'Rusak Permanen', 'o8pwOpc_cek.png');
-INSERT INTO `tblalat` VALUES ('ALT004', 'KTA001', 'LOK001', 'PC-Diskominfo 004', '2021-01-01', 'PC Windows 7', '-', '-', '-', '-', '-', '4 GB', '700 GB', 'I7', 'Normal', 'QY6rbpc_ok.jpg');
+INSERT INTO `tblalat` VALUES ('ALT004', 'KTA001', 'LOK001', 'PC-Diskominfo 004', '2021-01-01', 'PC Windows 10', '-', '-', '-', '-', '-', '12 GB', '700 GB', 'I7', 'Normal', 'QY6rbpc_ok.jpg');
 INSERT INTO `tblalat` VALUES ('ALT009', 'KTA001', 'LOK001', 'PC-Diskominfo 87', '2021-01-01', 'PC Asus + Windows 10 Pro', '-', '-', '-', '-', '-', '6 GB', '500 GB', 'I5', 'Rusak Sementara', 'khcSLpc_cek.png');
 INSERT INTO `tblalat` VALUES ('ALT033', 'KTA004', 'LOK002', 'Printer Epson', '2022-07-20', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'Rusak Permanen', 'k9Bz3');
 INSERT INTO `tblalat` VALUES ('ALT036', 'KTA004', 'LOK004', 'PR-Dispen Kota Gusit 001', '2021-11-23', 'Canon Printer - P', '-', '-', '-', '-', '-', '-', '-', '-', 'Rusak Permanen', 'fTi5Wc_printer.jpg');
 INSERT INTO `tblalat` VALUES ('ALT074', 'KTA004', 'LOK003', 'PR-Dinas Perikanan 001', '2021-12-21', 'Printer - Scanner', '-', '-', '-', '-', '-', '-', '-', '-', 'Normal', 's5TXeprinter.jpg');
 INSERT INTO `tblalat` VALUES ('ALT099', 'KTA004', 'LOK007', 'PR-Dispen Kota Gusit 002', '2021-12-21', 'HP Printer', '-', '-', '-', '-', '-', '-', '-', '-', 'Normal', 'H7m2Wprinter.jpg');
+INSERT INTO `tblalat` VALUES ('ALT234', 'KTA004', 'LOK007', 'Epson Printer', '2022-09-06', '-', '', '', '', '', '', '', '', '', 'Normal', '');
+INSERT INTO `tblalat` VALUES ('ALT644', 'KTA004', 'LOK002', 'Printer OKE', '2022-09-10', '-', '', '', '', '', '', '', '', '', 'Normal', '');
 INSERT INTO `tblalat` VALUES ('ALT782', 'KTA002', 'LOK002', 'MD-Dishub', '2017-04-05', 'Vodafone Modem', '-', '-', '-', '-', '-', '-', '-', '-', 'Normal', 'xg3IZmodem.jpg');
 INSERT INTO `tblalat` VALUES ('ALT982', 'KAT005', 'LOK001', 'SW-Diskominfo', '2022-01-05', 'D-Link', '-', '-', '-', '-', '-', '-', '-', '-', 'Normal', '7CZpWswitch.jpg');
 
@@ -133,7 +135,7 @@ CREATE TABLE `tblhistorilokasi`  (
   `id_lokasi_b` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tgl` date NOT NULL,
   PRIMARY KEY (`id_histori`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tblhistorilokasi
@@ -161,6 +163,7 @@ INSERT INTO `tblhistorilokasi` VALUES (43, 'ALT074', 'LOK004', 'LOK007', '2022-0
 INSERT INTO `tblhistorilokasi` VALUES (44, 'ALT004', 'LOK005', 'LOK001', '2022-02-15');
 INSERT INTO `tblhistorilokasi` VALUES (45, 'ALT074', 'LOK007', 'LOK003', '2022-02-27');
 INSERT INTO `tblhistorilokasi` VALUES (46, 'ALT099', 'LOK003', 'LOK007', '2022-07-21');
+INSERT INTO `tblhistorilokasi` VALUES (47, 'ALT234', 'LOK003', 'LOK007', '2022-09-06');
 
 -- ----------------------------
 -- Table structure for tblkategori
@@ -193,12 +196,13 @@ CREATE TABLE `tbllogin`  (
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `role` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbllogin
 -- ----------------------------
 INSERT INTO `tbllogin` VALUES (1, 'admin', 'admin', 'admin');
+INSERT INTO `tbllogin` VALUES (2, 'user', 'user', 'user');
 
 -- ----------------------------
 -- Table structure for tbllokasi
@@ -280,14 +284,27 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `alat_view` AS SELECT
 	tblalat.status_alat, 
 	tblalat.p_img, 
 	tblkategori.nama_kategori, 
-	tbllokasi.nama_lokasi
+	tbllokasi.nama_lokasi, 
+	tblhistorilokasi.id_alat AS cek_alat
 FROM
-	tblalat,
-	tblkategori,
+	tblalat
+	INNER JOIN
+	tblkategori
+	ON 
+		tblalat.id_kategori = tblkategori.id_kategori
+	INNER JOIN
 	tbllokasi
+	ON 
+		tblalat.id_lokasi = tbllokasi.id_lokasi
+	LEFT JOIN
+	tblhistorilokasi
+	ON 
+		tblalat.id_alat = tblhistorilokasi.id_alat
 WHERE
 	tblalat.id_kategori = tblkategori.id_kategori AND
-	tblalat.id_lokasi = tbllokasi.id_lokasi ;
+	tblalat.id_lokasi = tbllokasi.id_lokasi
+GROUP BY
+	tblalat.id_alat ;
 
 -- ----------------------------
 -- View structure for edit_alat_view
