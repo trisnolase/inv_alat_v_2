@@ -68,23 +68,23 @@ if ($sesi == "admin") {
 					<!-- ===================================================================== -->
 
 					<nav>
-						<ul class="pagination justify-content-center">
+						<ul class="pagination">
 							<li class="page-item">
-								<a class="page-link" <?php if ($halaman > 1) {
-															echo "href='xpenanganan-$previous'";
-														} ?>>Previous</a>
+								<a class="page-link bg-primary mr-1" <?php if ($halaman > 1) {
+																			echo "href='xpenanganan-$previous'";
+																		} ?>>Previous</a>
 							</li>
 							<?php
 							for ($x = 1; $x <= $total_halaman; $x++) {
 							?>
-								<li class="page-item"><a class="page-link" href="xpenanganan-<?php echo $x ?>"><?php echo $x; ?></a></li>
+								<li class="page-item"><a class="page-link bg-primary mr-1" href="xpenanganan-<?php echo $x ?>"><?php echo $x; ?></a></li>
 							<?php
 							}
 							?>
 							<li class="page-item">
-								<a class="page-link" <?php if ($halaman < $total_halaman) {
-															echo "href='xpenanganan-$next'";
-														} ?>>Next</a>
+								<a class="page-link bg-primary" <?php if ($halaman < $total_halaman) {
+																	echo "href='xpenanganan-$next'";
+																} ?>>Next</a>
 							</li>
 						</ul>
 					</nav>
