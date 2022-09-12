@@ -31,10 +31,11 @@ RewriteRule ^statusalat-(.*)$ dashboard.php?xlink=view_data/tambah/tambah_penang
 
 #penanganan
 RewriteRule ^penanganan dashboard.php?xlink=view_data/penanganan.php&apage=penanganan [L]
-RewriteRule ^mutasi dashboard.php?xlink=view_data/mutasi_alat.php&apage=mutasi [L]
 
 #mutasi
+RewriteRule ^mutasi dashboard.php?xlink=view_data/mutasi_alat.php&apage=mutasi [L]
 RewriteRule ^tambahmutasi dashboard.php?xlink=view_data/tambah/tambah_mutasi.php&apage=mutasi [L]
+RewriteRule ^page-(.*)$ dashboard.php?xlink=view_data/mutasi_alat.php&apage=mutasi&halaman=$1 [L]
 
 #cari
 RewriteRule ^caridata dashboard.php?xlink=view_data/pencarian.php [L]
