@@ -28,6 +28,7 @@ RewriteRule ^hapuslok-(.*)$ control_data/proses_db_lokasi.php?modul=lokasi&act=h
 RewriteRule ^lapor dashboard.php?xlink=view_data/lapor_alat.php&apage=lapor [L]
 RewriteRule ^gangguan dashboard.php?xlink=view_data/gangguan.php&apage=gangguan [L]
 RewriteRule ^statusalat-(.*)$ dashboard.php?xlink=view_data/tambah/tambah_penanganan.php&apage=gangguan&id=$1 [L]
+RewriteRule ^gpage-(.*)$ dashboard.php?xlink=view_data/gangguan.php&apage=gangguan&halaman=$1 [L]
 
 #penanganan
 RewriteRule ^penanganan dashboard.php?xlink=view_data/penanganan.php&apage=penanganan [L]

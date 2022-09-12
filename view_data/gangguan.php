@@ -3,8 +3,7 @@ $sesi = isset($_SESSION['role']) ? $_SESSION['role'] : '';
 if ($sesi == "admin") {
 ?>
 	<?php
-	$sql = mysqli_query($dblink, "SELECT * from tblgangguan as a,tblalat as b where a.id_alat=b.id_alat order by
-	a.id_gangguan desc");
+	// $sql = mysqli_query($dblink, "SELECT * from tblgangguan as a,tblalat as b where a.id_alat=b.id_alat order by a.id_gangguan desc");
 	?>
 	<div class='col-md-12'>
 		<div class='card'>
@@ -27,7 +26,26 @@ if ($sesi == "admin") {
 						</thead>
 						<tbody>
 							<?php
-							while ($r = mysqli_fetch_array($sql, MYSQLI_ASSOC)) {
+
+							// =====================================================================
+
+							$batas = 5;
+							$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
+							$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+
+							$previous = $halaman - 1;
+							$next = $halaman + 1;
+
+							$data = mysqli_query($dblink, "SELECT * from gangguan_view");
+							$jumlah_data = mysqli_num_rows($data);
+							$total_halaman = ceil($jumlah_data / $batas);
+
+							$query = mysqli_query($dblink, "SELECT * from gangguan_view order by status asc limit $halaman_awal, $batas");
+							$nomor = $halaman_awal + 1;
+
+							// =====================================================================
+
+							while ($r = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 								$xidk = isset($r['id_gangguan']) ? $r['id_gangguan'] : '';
 								$xnma = isset($r['nama_peralatan']) ? $r['nama_peralatan'] : '';
 								$xida = isset($r['id_alat']) ? $r['id_alat'] : '';
@@ -42,7 +60,7 @@ if ($sesi == "admin") {
 								}
 							?>
 								<tr>
-									<td><?php echo $xidk ?></td>
+									<td class='text-center'><?php echo $xidk ?></td>
 									<td><?php echo $xida ?></td>
 									<td><?php echo $xnma ?></td>
 									<td class="text-center"><?php echo date_format(new DateTime($xtgl), 'd M Y'); ?></td>
@@ -60,6 +78,33 @@ if ($sesi == "admin") {
 							<?php } ?>
 						</tbody>
 					</table>
+
+					<!-- ===================================================================== -->
+
+					<nav>
+						<ul class="pagination justify-content-center">
+							<li class="page-item">
+								<a class="page-link" <?php if ($halaman > 1) {
+															echo "href='gpage-$previous'";
+														} ?>>Previous</a>
+							</li>
+							<?php
+							for ($x = 1; $x <= $total_halaman; $x++) {
+							?>
+								<li class="page-item"><a class="page-link" href="gpage-<?php echo $x ?>"><?php echo $x; ?></a></li>
+							<?php
+							}
+							?>
+							<li class="page-item">
+								<a class="page-link" <?php if ($halaman < $total_halaman) {
+															echo "href='gpage-$next'";
+														} ?>>Next</a>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- ===================================================================== -->
+
 				</div>
 			</div>
 		</div>
