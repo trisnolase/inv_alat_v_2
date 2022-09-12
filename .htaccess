@@ -32,6 +32,7 @@ RewriteRule ^gpage-(.*)$ dashboard.php?xlink=view_data/gangguan.php&apage=ganggu
 
 #penanganan
 RewriteRule ^penanganan dashboard.php?xlink=view_data/penanganan.php&apage=penanganan [L]
+RewriteRule ^xpenanganan-(.*)$ dashboard.php?xlink=view_data/penanganan.php&apage=penanganan&halaman=$1 [L]
 
 #mutasi
 RewriteRule ^mutasi dashboard.php?xlink=view_data/mutasi_alat.php&apage=mutasi [L]
