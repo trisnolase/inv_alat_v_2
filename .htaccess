@@ -2,7 +2,7 @@
  
 RewriteEngine on
 
-RewriteRule ^login index.php [L]
+RewriteRule ^login index.html [L]
 
 #alat
 RewriteRule ^alat-(.*)$ dashboard.php?xlink=view_data/data_alat.php&apage=alat&act=$1 [L]
@@ -51,12 +51,15 @@ RewriteRule ^ceklogin control_data/proses_db_login.php?modul=login&act=cek [L]
 #login
 RewriteRule ^logout control_data/proses_db_login.php?modul=logout&act=cek [L]
 
+#home
+RewriteRule ^homepage dashboard.php?xlink=view_data/home.php [L]
+
 Options All -Indexes
 
-ErrorDocument 400 http://localhost/inv_alat_v_2
-ErrorDocument 401 http://localhost/inv_alat_v_2
-ErrorDocument 403 http://localhost/inv_alat_v_2
-ErrorDocument 404 http://localhost/inv_alat_v_2
-ErrorDocument 500 http://localhost/inv_alat_v_2
+ErrorDocument 400 http://localhost/inv_alat_v_2/homepage
+ErrorDocument 401 http://localhost/inv_alat_v_2/homepage
+ErrorDocument 403 http://localhost/inv_alat_v_2/homepage
+ErrorDocument 404 http://localhost/inv_alat_v_2/homepage
+ErrorDocument 500 http://localhost/inv_alat_v_2/homepage
 
 </IfModule>
