@@ -84,21 +84,25 @@ if ($sesi == "admin") {
 					<nav>
 						<ul class="pagination">
 							<li class="page-item">
-								<a class="page-link bg-primary mr-1" <?php if ($halaman > 1) {
-																			echo "href='gpage-$previous'";
-																		} ?>>Previous</a>
+								<a class="page-link mr-1" <?php if ($halaman > 1) {
+																echo "href='gpage-$previous'";
+															} ?>>Previous</a>
 							</li>
 							<?php
 							for ($x = 1; $x <= $total_halaman; $x++) {
+								$active = '';
+								if ($x == $halaman) {
+									$active = "active";
+								}
 							?>
-								<li class="page-item"><a class="page-link bg-primary mr-1" href="gpage-<?php echo $x ?>"><?php echo $x; ?></a></li>
+								<li class="page-item <?php echo $active ?>"><a class="page-link mr-1" href="gpage-<?php echo $x ?>"><?php echo $x; ?></a></li>
 							<?php
 							}
 							?>
 							<li class="page-item">
-								<a class="page-link bg-primary" <?php if ($halaman < $total_halaman) {
-																	echo "href='gpage-$next'";
-																} ?>>Next</a>
+								<a class="page-link" <?php if ($halaman < $total_halaman) {
+															echo "href='gpage-$next'";
+														} ?>>Next</a>
 							</li>
 						</ul>
 					</nav>
